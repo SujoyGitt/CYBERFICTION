@@ -37,9 +37,7 @@ function files(index) {
     if (i > 99) {
       count = "0";
     }
-    k += `/CYBERFICTION/img/male${count}${i}.png\n`;
-
-   
+ k += `/CYBERFICTION/Img/male${count}${i}.png\n`;
 
   }
   var data = `${k}`;
