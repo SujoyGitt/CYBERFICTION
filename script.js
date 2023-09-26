@@ -130,14 +130,14 @@ gsap.to(".page3", {
   scrollTrigger: {
     trigger: ".page3",
     start: "top top",
-    end: "bottom top",
+    end: "bottom bottom",
     pin: true,
   },
 });
 
 ScrollTrigger.create({
   trigger: '.allAvatars',
-  start: 'top center', // Adjust this as needed
+  start: 'top top', // Adjust this as needed
   end: 'bottom center', // Adjust this as needed
   onEnter: () => {
     // Change the navbar's  color when the section enters the viewport
