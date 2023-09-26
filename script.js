@@ -152,7 +152,7 @@ ScrollTrigger.create({
 });
 ScrollTrigger.create({
   trigger: '.c-roadmap',
-  start: 'top center', // Adjust this as needed
+  start: 'top top', // Adjust this as needed
   end: 'bottom center', // Adjust this as needed
   onEnter: () => {
     // Change the navbar's  color when the section enters the viewport
