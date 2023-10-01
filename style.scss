@@ -5,6 +5,8 @@
 }
 html {
   font-size: 16px; /* 1rem = 16px */
+  scroll-behavior: smooth;
+
 }
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;800&family=Prompt:wght@200;300;400;500;600;700&family=Urbanist:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,700;1,800&display=swap");
 :root {
@@ -13,11 +15,35 @@ html {
   --lightblack: #343434;
   --darkwhite: #c9c9c9;
 }
+.cursor1,.cursor2,.cursor3 {
+  position: fixed;
+  background: var(--white);
+  border-radius: 50%;
+  z-index: 15;
+}
+.cursor1{
+  width: 20px;
+  height: 20px;
+}
+.cursor2{
+  width: 40px;
+  height:40px;
+  opacity: .5;
+  transition: .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.cursor3{
+  width: 60px;
+  height: 60px;
+  opacity: .2;
+  transition: .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 body {
   width: 100%;
   min-height: 100vh;
   font-family: "Urbanist", "Noto Sans KR", sans-serif;
   background: linear-gradient(70deg, var(--black), var(--lightblack));
+  scroll-behavior: smooth;
+  
 }
 ::-webkit-scrollbar {
   width: 12px; /* Width of the scrollbar */
@@ -110,17 +136,26 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 11;
+  z-index: 16;
   color: var(--white);
+  
+  
   .logo {
+    
     h1 {
-      font-size: 1.5rem;
-      font-weight: bold;
-      span {
-        font-weight: 400;
+      cursor: pointer;
+      a{
+        text-decoration: none;
+        color: var(--white);
+        font-size: 1.5rem;
+        font-weight: 800;
+        span {
+          font-weight: 400;
+        }
       }
     }
   }
+  
   .nav-right {
     a {
       margin-right: 10px;
@@ -130,6 +165,7 @@ header {
 .wrapper {
   position: relative;
   overflow: hidden;
+
   .page,
   .page1,
   .page2,
@@ -554,7 +590,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-   background: linear-gradient(70deg, var(--black), var(--lightblack));
+  background: linear-gradient(70deg, var(--black), var(--lightblack));
   color: #fff;
   padding: 0 0 2rem;
   .foot-link {
@@ -571,27 +607,26 @@ header {
       border-radius: 1rem;
       color: #fff;
       text-decoration: none;
+    }
   }
- 
-}
-.foot-copy {
-  width: 100%;
-  text-align: center;
-  margin: 2rem 0;
-  font-size: 11vw;
-  letter-spacing: -2px;
-  line-height: 20vh;
-  span{
-    font-style: italic;
-  font-weight: 800;
-  color:transparent;
-  -webkit-text-stroke: 1px var(--white);
+  .foot-copy {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 11vw;
+    letter-spacing: -2px;
+    line-height: 20vh;
+    span {
+      font-style: italic;
+      font-weight: 800;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--white);
+    }
   }
-}
-.content-inner-con {
-  width: 48%;
-  text-align: center;
-}
+  .content-inner-con {
+    width: 48%;
+    text-align: center;
+  }
 }
 @media (max-width: 776px) {
   .wrapper {
@@ -699,25 +734,26 @@ header {
       }
     }
   }
-  .c-operation{
-    .content-con{
+  .c-operation {
+    .content-con {
       .main-con-wrap {
         font-size: 2rem;
       }
       .content-inner {
         width: 100%;
-        
+
         .content-inner-con {
-          width: 100%;}
+          width: 100%;
+        }
       }
     }
   }
-  .footer{
+  .footer {
     padding-bottom: 8rem;
     .foot-link {
       justify-content: center;
     }
-    .foot-copy{
+    .foot-copy {
       line-height: normal;
     }
   }

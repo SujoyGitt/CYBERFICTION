@@ -3,17 +3,15 @@ window.onload = function () {
   loader.remove();
 };
 //smooth scroll
-const lenis = new Lenis()
-lenis.on('scroll', (e) => {
-  console.log(e)
-})
+const lenis = new Lenis();
+lenis.on("scroll", (e) => {});
 
 function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
+  lenis.raf(time);
+  requestAnimationFrame(raf);
 }
 
-requestAnimationFrame(raf)
+requestAnimationFrame(raf);
 // canvas start here
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
@@ -37,8 +35,9 @@ function files(index) {
     if (i > 99) {
       count = "0";
     }
- k += `/CYBERFICTION/Img/male${count}${i}.png\n`;
-
+    //  k += `/CYBERFICTION/img/male${count}${i}.png\n`;//it's for github hosting
+    // if you are run local mechine so this code
+    k += `./img/male${count}${i}.png\n`;
   }
   var data = `${k}`;
   return data.split("\n")[index];
@@ -137,36 +136,67 @@ gsap.to(".page3", {
 });
 
 ScrollTrigger.create({
-  trigger: '.allAvatars',
-  start: 'top top', // Adjust this as needed
-  end: 'bottom center', // Adjust this as needed
+  trigger: ".allAvatars",
+  start: "top top", // Adjust this as needed
+  end: "bottom bottom", // Adjust this as needed
   onEnter: () => {
     // Change the navbar's  color when the section enters the viewport
-    gsap.to('header', { color: 'var(--black)', duration: 0.2 });
-    gsap.to('header svg', { fill: 'var(--black)', duration: 0.2 });
+    gsap.to("header,header a", { color: "var(--black)", duration: 0.2 });
+    gsap.to("header svg", { fill: "var(--black)", duration: 0.2 });
+    gsap.to(".cursor1,.cursor2,.cursor3", {
+      background: "var(--black)",
+      duration: 0.2,
+    });
   },
   onLeaveBack: () => {
     // Change the navbar's  color back to the initial color when the section leaves the viewport
-    gsap.to('header', { color: 'var(--white)', duration: 0.2 });
-    gsap.to('header svg', { fill: 'var(--white)', duration: 0.2 });
+    gsap.to("header,header a", { color: "var(--white)", duration: 0.2 });
+    gsap.to("header svg", { fill: "var(--white)", duration: 0.2 });
+    gsap.to(".cursor1,.cursor2,.cursor3", {
+      background: "var(--white)",
+      duration: 0.2,
+    });
   },
 });
 ScrollTrigger.create({
-  trigger: '.c-roadmap',
-  start: 'top top', // Adjust this as needed
-  end: 'bottom center', // Adjust this as needed
+  trigger: ".c-roadmap",
+  start: "top top", // Adjust this as needed
+  end: "bottom center", // Adjust this as needed
   onEnter: () => {
     // Change the navbar's  color when the section enters the viewport
-    gsap.to('header', { color: 'var(--white)', duration: 0.2 });
-    gsap.to('header svg', { fill: 'var(--white)', duration: 0.2 });
-    
+    gsap.to("header,header a", { color: "var(--white)", duration: 0.2 });
+    gsap.to("header svg", { fill: "var(--white)", duration: 0.2 });
+    gsap.to(".cursor1,.cursor2,.cursor3", {
+      background: "var(--white)",
+      duration: 0.2,
+    });
   },
   onLeaveBack: () => {
     // Change the navbar's  color back to the initial color when the section leaves the viewport
-    gsap.to('header', { color: 'var(--black)', duration: 0.2 });
-    gsap.to('header svg', { fill: 'var(--black)', duration: 0.2 });
+    gsap.to("header,header a", { color: "var(--black)", duration: 0.2 });
+    gsap.to("header svg", { fill: "var(--black)", duration: 0.2 });
+    gsap.to(".cursor1,.cursor2,.cursor3", {
+      background: "var(--black)",
+      duration: 0.2,
+    });
   },
 });
 
+const cursor1 = document.createElement("div");
+const cursor2 = document.createElement("div");
+const cursor3 = document.createElement("div");
+cursor1.classList.add("cursor1");
+document.body.appendChild(cursor1);
+cursor2.classList.add("cursor2");
+document.body.appendChild(cursor2);
+cursor3.classList.add("cursor3");
+document.body.appendChild(cursor3);
 
-
+document.addEventListener("mousemove", (e) => {
+  cursor1.style.left = e.clientX + "px";
+  cursor1.style.top = e.clientY + "px";
+  cursor2.style.left = e.clientX - 10 + "px";
+  cursor2.style.top = e.clientY - 10 + "px";
+  cursor3.style.left = e.clientX - 20 + "px";
+  cursor3.style.top = e.clientY - 20 + "px";
+});
