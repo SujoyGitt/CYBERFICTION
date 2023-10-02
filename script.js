@@ -35,9 +35,9 @@ function files(index) {
     if (i > 99) {
       count = "0";
     }
-    //  k += `/CYBERFICTION/Img/male${count}${i}.png\n`;//it's for github hosting
+     k += `/CYBERFICTION/Img/male${count}${i}.png\n`;//it's for github hosting
     // if you are run local mechine so this code
-    k += `./img/male${count}${i}.png\n`;
+    // k += `./img/male${count}${i}.png\n`;
   }
   var data = `${k}`;
   return data.split("\n")[index];
@@ -181,7 +181,7 @@ ScrollTrigger.create({
   },
 });
 
-if (window.innerWidth > 992) {
+if (window.innerWidth > 776) {
   const cursor1 = document.createElement("div");
   const cursor2 = document.createElement("div");
   const cursor3 = document.createElement("div");
