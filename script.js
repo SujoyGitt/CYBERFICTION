@@ -35,7 +35,7 @@ function files(index) {
     if (i > 99) {
       count = "0";
     }
-     k += `/CYBERFICTION/img/male${count}${i}.png\n`;//it's for github hosting
+     k += `/CYBERFICTION/Img/male${count}${i}.png\n`;//it's for github hosting
     // if you are run local mechine so this code
     // k += `./img/male${count}${i}.png\n`;
   }
@@ -64,7 +64,6 @@ gsap.to(imageSeq, {
   scrollTrigger: {
     scrub: 0.15,
     trigger: `.page>canvas`,
-    //   set start end according to preference
     start: `top top`,
     end: `600% top`,
     scroller: `body`,
