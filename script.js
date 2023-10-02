@@ -35,9 +35,9 @@ function files(index) {
     if (i > 99) {
       count = "0";
     }
-     k += `/CYBERFICTION/Img/male${count}${i}.png\n`;//it's for github hosting
+    //  k += `/CYBERFICTION/Img/male${count}${i}.png\n`;//it's for github hosting
     // if you are run local mechine so this code
-    // k += `./img/male${count}${i}.png\n`;
+    k += `./img/male${count}${i}.png\n`;
   }
   var data = `${k}`;
   return data.split("\n")[index];
@@ -181,21 +181,22 @@ ScrollTrigger.create({
   },
 });
 
-const cursor1 = document.createElement("div");
-const cursor2 = document.createElement("div");
-const cursor3 = document.createElement("div");
-cursor1.classList.add("cursor1");
-document.body.appendChild(cursor1);
-cursor2.classList.add("cursor2");
-document.body.appendChild(cursor2);
-cursor3.classList.add("cursor3");
-document.body.appendChild(cursor3);
-
-document.addEventListener("mousemove", (e) => {
-  cursor1.style.left = e.clientX + "px";
-  cursor1.style.top = e.clientY + "px";
-  cursor2.style.left = e.clientX - 10 + "px";
-  cursor2.style.top = e.clientY - 10 + "px";
-  cursor3.style.left = e.clientX - 20 + "px";
-  cursor3.style.top = e.clientY - 20 + "px";
-});
+if (window.innerWidth > 992) {
+  const cursor1 = document.createElement("div");
+  const cursor2 = document.createElement("div");
+  const cursor3 = document.createElement("div");
+  cursor1.classList.add("cursor1");
+  document.body.appendChild(cursor1);
+  cursor2.classList.add("cursor2");
+  document.body.appendChild(cursor2);
+  cursor3.classList.add("cursor3");
+  document.body.appendChild(cursor3);
+  document.addEventListener("mousemove", (e) => {
+    cursor1.style.left = e.clientX + "px";
+    cursor1.style.top = e.clientY + "px";
+    cursor2.style.left = e.clientX - 10 + "px";
+    cursor2.style.top = e.clientY - 10 + "px";
+    cursor3.style.left = e.clientX - 20 + "px";
+    cursor3.style.top = e.clientY - 20 + "px";
+  });
+}
