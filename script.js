@@ -35,9 +35,9 @@ function files(index) {
     if (i > 99) {
       count = "0";
     }
-     k += `/CYBERFICTION/Img/male${count}${i}.png\n`;//it's for github hosting
+    //  k += `/CYBERFICTION/Img/px-conversions/male${count}${i}.webp\n`;//it's for github hosting
     // if you are run local mechine so this code
-    // k += `./img/male${count}${i}.png\n`;
+    k += `./img/px-conversions/male${count}${i}.webp\n`;
   }
   var data = `${k}`;
   return data.split("\n")[index];
